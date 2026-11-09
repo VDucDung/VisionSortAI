@@ -1,0 +1,18 @@
+{
+  "version": "components-experimental-v1",
+  "trainingScope": "bottle-components",
+  "experimental": true,
+  "validated": false,
+  "evaluationReport": "evaluation.json",
+  "detector": {
+    "file": "parts-yolo11n.pt",
+    "sha256": "aaa97fdf34f91104471a424a8c7fd40c1f31e99f628c9f46a6333fcd53cebd0c"
+  },
+  "materialClassifier": {
+    "file": "material-resnet18.pth",
+    "sha256": "11161155a8047b9855b7463de91dc0fca922adb2999c8d50b7eb39af45e38a9b"
+  },
+  "materialThreshold": 0.7,
+  "detectionThreshold": 0.25,
+  "detectorImageSize": 416
+}

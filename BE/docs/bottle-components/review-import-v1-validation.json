@@ -1,0 +1,25 @@
+{
+  "pythonTests": 37,
+  "pythonTestsPassed": true,
+  "annotatorDOMFlows": 8,
+  "annotatorDOMFlowsPassed": true,
+  "liveHTTPQueueCounts": {
+    "review-import-v1-priority": 30,
+    "review-import-v1": 98
+  },
+  "prioritySubsetOfMainQueue": true,
+  "queueFilesExistInActiveIntake": true,
+  "queueErrors": [],
+  "existingReviewedAnnotationPreserved": true,
+  "protectedFilesUnchanged": {
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\01_user_photos\\materials.csv": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\annotations.jsonl": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\proposals.active.json": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\scope-reviews.jsonl": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\exact-dedup-policy.json": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\05_models\\research-detector-v2\\training\\detector\\weights\\best.pt": true
+  },
+  "browserVisualQAPerformed": false,
+  "newMaterialTrainingStarted": false,
+  "runtimeActivated": false
+}

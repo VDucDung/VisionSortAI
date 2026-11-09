@@ -1,0 +1,26 @@
+{
+  "exampleOnly": true,
+  "note": "Illustrative AI wire contract only. Scores are invented examples, not measured predictions. BE assigns database ids and adds guidance.",
+  "apiVersion": "1",
+  "componentsApiVersion": 1,
+  "requestId": 39,
+  "analysisMode": "bottle_components",
+  "componentModelVersion": "example-parts-v1",
+  "count": 1,
+  "componentCount": 3,
+  "confidenceAvg": 0.78,
+  "requiresConfirmation": true,
+  "detections": [{
+    "label": "glass",
+    "labelDisplay": "Chai thủy tinh",
+    "confidence": 0.78,
+    "x1": 260, "y1": 70, "x2": 540, "y2": 930,
+    "needsConfirm": false,
+    "componentAnalysisStatus": "COMPLETED",
+    "components": [
+      {"partType": "cap", "material": "metal", "detectionConfidence": 0.93, "materialConfidence": 0.88, "needsConfirm": false, "x1": 340, "y1": 70, "x2": 460, "y2": 140},
+      {"partType": "body", "material": "glass", "detectionConfidence": 0.96, "materialConfidence": 0.91, "needsConfirm": false, "x1": 260, "y1": 140, "x2": 540, "y2": 930},
+      {"partType": "label", "material": "unknown", "detectionConfidence": 0.89, "materialConfidence": 0.4, "needsConfirm": true, "x1": 285, "y1": 500, "x2": 515, "y2": 750}
+    ]
+  }]
+}

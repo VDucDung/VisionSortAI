@@ -1,0 +1,24 @@
+{
+  "exampleOnly": true,
+  "draftOnly": true,
+  "supersededBy": "api-v1-components.example.json",
+  "apiVersion": "2",
+  "requestId": 39,
+  "analysisMode": "components",
+  "modelVersions": {"bottleDetector": "existing-bottle-model", "partsDetector": "trained-parts-model-required", "materialClassifier": "trained-part-material-model-required"},
+  "bottleCount": 1,
+  "componentCount": 3,
+  "detections": [
+    {
+      "id": "bottle-1",
+      "bbox": [260, 70, 540, 930],
+      "componentAnalysis": {"status": "COMPLETED"},
+      "components": [
+        {"id": "cap-1", "partType": "cap", "material": "metal", "detectionConfidence": 0.93, "materialConfidence": 0.88, "needsConfirm": false, "bbox": [340, 70, 460, 140]},
+        {"id": "body-1", "partType": "body", "material": "glass", "detectionConfidence": 0.96, "materialConfidence": 0.91, "needsConfirm": false, "bbox": [260, 140, 540, 930]},
+        {"id": "label-1", "partType": "label", "material": "paper", "detectionConfidence": 0.89, "materialConfidence": 0.82, "needsConfirm": false, "bbox": [285, 500, 515, 750]}
+      ]
+    }
+  ],
+  "note": "Illustrative contract only. Confidence values are invented examples, not predictions or benchmark results."
+}

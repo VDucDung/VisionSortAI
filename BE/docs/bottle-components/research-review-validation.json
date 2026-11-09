@@ -1,0 +1,16 @@
+{
+  "pythonRegressionTests": 34,
+  "annotatorDOMFlows": 4,
+  "localHTTPAndDataChecks": [
+    "plastic_00235 corrected geometry loaded from master; materials unverified",
+    "plastic_01198 corrected geometry loaded from master; materials unverified",
+    "plastic_01091 corrected geometry loaded from master; materials unverified",
+    "Pending image loads active component proposal without approval",
+    "Only allowed dataset photo paths are readable",
+    "Foreign Host rejected",
+    "Original materials.csv checksum unchanged",
+    "Four detector train crops exported; no unverified material crops exported"
+  ],
+  "browserVisualQAPerformed": false,
+  "runtimeActivated": false
+}

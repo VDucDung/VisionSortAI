@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1",
+  "exampleOnly": true,
+  "image": {"fileName": "example-bottle.jpg", "width": 800, "height": 1000},
+  "coordinateSystem": "original-image-pixels-xyxy",
+  "bottles": [
+    {
+      "bottleId": "bottle-1",
+      "bbox": [260, 70, 540, 930],
+      "components": [
+        {"componentId": "cap-1", "partType": "cap", "material": "metal", "materialVerified": true, "bbox": [340, 70, 460, 140]},
+        {"componentId": "body-1", "partType": "body", "material": "glass", "materialVerified": true, "bbox": [260, 140, 540, 930]},
+        {"componentId": "label-1", "partType": "label", "material": "paper", "materialVerified": true, "bbox": [285, 500, 515, 750]}
+      ]
+    }
+  ],
+  "note": "Illustrative annotations only; no linked training image or measured material evidence is supplied."
+}

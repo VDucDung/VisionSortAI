@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-03",
+  "scope": "bottle-components-research",
+  "backend": {
+    "testsPassed": 62,
+    "jarBuilt": true,
+    "databaseTested": "H2 (MySQL mode)",
+    "externalImageUploads": "mocked"
+  },
+  "frontend": {
+    "flowsPassed": 36,
+    "runner": "npm test / jsdom",
+    "browserVisualQA": "unavailable: computer/browser access host not connected"
+  },
+  "ai": {
+    "componentUnitTestsPassed": 15,
+    "legacyApiTestsPassed": 11,
+    "integrationContractTestsPassed": 2,
+    "cpuTrainExportCheckpointEvaluateSmokePassed": true,
+    "smokeData": "synthetic fixtures only; candidates removed",
+    "notebookSyntaxChecked": true,
+    "notebookExecutedOnColab": false,
+    "runtimeComponents": {
+      "apiVersion": 1,
+      "status": "NOT_RUN",
+      "partTypes": [
+        "cap",
+        "body",
+        "label"
+      ],
+      "materialCodes": [
+        "glass",
+        "metal",
+        "paper",
+        "plastic"
+      ],
+      "modelVersion": null,
+      "requiresValidatedCheckpoint": true,
+      "weightsLoaded": false
+    },
+    "publicDetectorPilot": {
+      "scope": "detector-only public-source pilot",
+      "epochs": 1,
+      "split": "test",
+      "testBottleCrops": 49,
+      "metrics": {
+        "metrics/precision(B)": 0.6289738171923621,
+        "metrics/recall(B)": 0.240816950580804,
+        "metrics/mAP50(B)": 0.2740827178864431,
+        "metrics/mAP50-95(B)": 0.1331197512571131,
+        "fitness": 0.1331197512571131
+      },
+      "seconds": 13.54,
+      "checkpoint": "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\05_models\\public-detector-pilot-v1\\detector\\weights\\best.pt",
+      "checkpointSha256": "0e46df81a42f8fefe5fd61d134f2087c6d9d5c5981962a47e3c54ea71e09cf9a",
+      "materialClassifierReady": false,
+      "endToEndReviewed": false,
+      "activated": false,
+      "note": "Preliminary one-epoch part geometry baseline; not a verified component-material model or deployment approval."
+    }
+  },
+  "data": {
+    "publicPhotosDownloaded": 483,
+    "annotationRecords": 475,
+    "pendingReviewParts": {
+      "body": 475,
+      "label": 343,
+      "cap": 226
+    },
+    "verifiedMaterials": {},
+    "skippedAmbiguousSourceImages": 8,
+    "validationErrors": 0
+  },
+  "remaining": [
+    "Review/refine the public-source detector baseline and evaluate on independent real bottles",
+    "Collect independent real bottle photos and verify component materials",
+    "Train/evaluate candidates on real data before activation"
+  ]
+}

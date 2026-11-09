@@ -1,0 +1,24 @@
+{
+  "pythonTests": 38,
+  "allPassed": true,
+  "intakePhotoCount": 6051,
+  "matchedPhotoCount": 6051,
+  "newGroupCount": 30,
+  "newPhotoCount": 116,
+  "all116ProposalRecordsValidated": true,
+  "proposalPartCount": 315,
+  "materialVerificationNotPromoted": true,
+  "original5935CSVRowsPreservedAsBytes": true,
+  "liveHTTPQueueCount": 116,
+  "liveHTTPNumberedViewsMapped": true,
+  "oldReviewedAnnotationStillPreferred": true,
+  "protectedFilesUnchanged": {
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\annotations.jsonl": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\scope-reviews.jsonl": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\exact-dedup-policy.json": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\05_models\\research-detector-v2\\training\\detector\\weights\\best.pt": true
+  },
+  "newTrainingStarted": false,
+  "runtimeActivated": false,
+  "browserVisualQAPerformed": false
+}

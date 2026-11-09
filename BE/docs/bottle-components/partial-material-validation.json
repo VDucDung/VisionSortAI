@@ -1,0 +1,22 @@
+{
+  "pythonTests": 41,
+  "allPassed": true,
+  "newPartialReviewedImages": 6,
+  "newMaterialRegions": 12,
+  "materialCropTotal": 20,
+  "materialCropClasses": {
+    "glass": 6,
+    "paper": 6,
+    "plastic": 8
+  },
+  "detectorCropCountUnchanged": 7,
+  "partialAnnotationsNeverTrainDetector": true,
+  "oldMasterRecordsPreserved": 481,
+  "materialProvenanceRecorded": true,
+  "liveAnnotationHTTPPassed": true,
+  "capClaimsRemainUnverified": 25,
+  "runtimeCheckpointUnchanged": true,
+  "independentMaterialTestSetReady": false,
+  "classifierTrainingStarted": false,
+  "runtimeActivated": false
+}

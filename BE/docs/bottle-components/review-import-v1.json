@@ -1,0 +1,101 @@
+{
+  "archive": "C:\\Users\\ADMIN\\Downloads\\bottle_components_review_import_v1.zip",
+  "archiveSha256": "7c0c3e4926d424031ffc0d2fff7cdfa00e10d3aaf0c4dcfd3eae71715519ce48",
+  "checkedAt": "2026-11-04T15:42:03.267685+00:00",
+  "entries": 11993,
+  "uncompressedBytes": 183565462,
+  "allEntryCRCsChecked": true,
+  "unsafePaths": 0,
+  "legacyPhotos": 5934,
+  "legacyPhotosAlreadyPresentBySha256": 5934,
+  "materialRows": 93,
+  "candidateGroups": 92,
+  "candidateImages": 98,
+  "candidateImagesMappedToExistingPhotos": 98,
+  "unmatchedCandidateImages": [],
+  "verifiedPartFlagsIncludingCan": {
+    "body": 1
+  },
+  "newVerifiedBottleMaterialExamples": 0,
+  "realUserBottlePhotos": 0,
+  "evidenceFiles": 0,
+  "componentAnnotationFiles": [],
+  "nearDuplicateScreenPairsInPackage": 510,
+  "filenameCrossSplitGroupsInPackage": 255,
+  "packageSummary": {
+    "source_image_count": 5934,
+    "source_label_files": 5934,
+    "legacy_split_images": {
+      "test": 593,
+      "train": 4749,
+      "valid": 592
+    },
+    "legacy_total_yolo_object_instances": 10532,
+    "legacy_object_geometry_counts": {
+      "segmentation_polygon": 2598,
+      "bbox": 7934
+    },
+    "legacy_waste_classes": [
+      "glass",
+      "metal",
+      "paper",
+      "plastic"
+    ],
+    "candidate_bottle_keyword_images": 98,
+    "candidate_bottle_keyword_filename_groups": 92,
+    "first_review_images_selected": 30,
+    "new_user_verified_bottle_images": 0,
+    "user_reference_can_images": 1,
+    "new_verified_bottle_components": 0,
+    "new_approved_component_crops": 0,
+    "exact_duplicate_groups": 129,
+    "exact_duplicate_groups_cross_split": 45,
+    "original_stem_groups_cross_split": 255,
+    "dhash_0_to_3_screen_pairs": 510,
+    "dhash_0_to_3_screen_cross_split_pairs": 195,
+    "label_parse_errors": 0,
+    "source_zip_sha256": "6e5a5d103bc8532291461a5c8f1ba4e43622bc96d47ab014790e5bfbe60ace12",
+    "readiness": "NOT_TRAIN_READY"
+  },
+  "existingMasterRecords": 478,
+  "existingReviewedMasterRecords": 3,
+  "protectedFiles": {
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\01_user_photos\\materials.csv": "288178e385f2686af6f78bd1bfec50b116e0adcb18d23ee7539615afc59e9f4b",
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\annotations.jsonl": "a61ed5339107fda56db8307b014d770e539fcd43633564612ff5bfec1bf62ff4",
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\proposals.active.json": "ea3ddc955e05bbf1453f5ff936379a09fe856f1f8e1b1ccbe434d9f37ed0971a",
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\scope-reviews.jsonl": "ecd80eb9ab1eb513e68d8730a2f47785e4e81128fc3db7a41cc5a8e08e9bb103",
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\exact-dedup-policy.json": "ebeef45a99b936adfd3bb711da763877243505bcc06fa30694067bbdb7760186",
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\05_models\\research-detector-v2\\training\\detector\\weights\\best.pt": "aaa97fdf34f91104471a424a8c7fd40c1f31e99f628c9f46a6333fcd53cebd0c"
+  },
+  "status": "REVIEW_METADATA_ONLY",
+  "codeExecutedFromZip": false,
+  "trainingStarted": false,
+  "runtimeActivated": false,
+  "importDirectory": "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\06_imports\\review-import-v1",
+  "filesExtractedForReview": 122,
+  "legacyPhotoCopiesAddedToActiveDataset": 0,
+  "activeCSVReplaced": false,
+  "activeMasterReplaced": false,
+  "independentlyCheckedLegacyGeometryCounts": {
+    "segmentation_polygon": 2598,
+    "bbox": 7934
+  },
+  "independentlyCheckedExactDuplicateGroups": 129,
+  "independentlyCheckedCrossSplitExactDuplicateGroups": 45,
+  "independentlyCheckedCrossSplitFilenameGroups": 255,
+  "screenPairConsistencyChecked": 510,
+  "screenPairSimilarityVisuallyConfirmed": false,
+  "reviewQueueUniquePhotos": 98,
+  "priorityQueuePhotos": 30,
+  "queuePhotosWithExistingComponentProposals": 37,
+  "queuePhotosMissingBottleOrPartProposals": 61,
+  "protectedFilesUnchanged": {
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\01_user_photos\\materials.csv": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\annotations.jsonl": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\proposals.active.json": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\scope-reviews.jsonl": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\exact-dedup-policy.json": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\05_models\\research-detector-v2\\training\\detector\\weights\\best.pt": true
+  },
+  "importedAt": "2026-11-04T15:50:31.691100+00:00"
+}

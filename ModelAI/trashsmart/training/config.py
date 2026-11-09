@@ -1,0 +1,48 @@
+import os
+from pathlib import Path
+
+import torch
+from dotenv import load_dotenv
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+load_dotenv(PROJECT_ROOT / ".env")
+
+PACKAGE_ROOT = PROJECT_ROOT / "trashsmart"
+RESNET_MODEL_PATH = Path(
+    os.getenv(
+        "RESNET_MODEL_PATH",
+        PACKAGE_ROOT / "models" / "best_resnet50_model1.pth",
+    )
+)
+MODELS_DIR = RESNET_MODEL_PATH.parent
+
+DIR_PATH = Path(os.getenv("DATASET_PATH", PROJECT_ROOT / "dataset_new"))
+TRAIN_DIR = DIR_PATH / "train" if (DIR_PATH / "train").is_dir() else DIR_PATH
+VAL_DIR = DIR_PATH / "valid" if TRAIN_DIR != DIR_PATH else None
+NUM_WORKERS = int(os.getenv("NUM_WORKERS", "4"))
+from trashsmart.shared.resnet_config import RESNET_INPUT_SIZE
+TARGET_SIZE = (RESNET_INPUT_SIZE, RESNET_INPUT_SIZE)
+BATCH_SIZE = int(os.getenv("BATCH_SIZE", "32"))
+EPOCHS = int(os.getenv("EPOCHS", "100"))
+STAGE1_EPOCHS = int(os.getenv("STAGE1_EPOCHS", "20"))
+LEARNING_RATE = float(os.getenv("LEARNING_RATE", "0.0001"))
+INPUT_SHAPE = (3, *TARGET_SIZE)
+
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+def _discover_classes(dataset_dir: Path) -> list[str]:
+    if not dataset_dir.exists():
+        return []
+    return sorted([p.name for p in dataset_dir.iterdir() if p.is_dir()])
+
+
+class_folders = _discover_classes(TRAIN_DIR)
+NUM_CLASSES = len(class_folders)
+WASTE_LABELS = {folder: idx for idx, folder in enumerate(class_folders)}
+INDEX_TO_NAME = {v: k for k, v in WASTE_LABELS.items()}
+
+MODEL_SAVE_PATH = MODELS_DIR / "resnet50_optimized_model1.pth"
+HISTORY_SAVE_PATH = MODELS_DIR / "resnet50_training_history1.pkl"
+BEST_MODEL_PATH = RESNET_MODEL_PATH

@@ -1,0 +1,54 @@
+{
+  "feature": "Component material HITL",
+  "frontendInstalled": true,
+  "frontendDomFlowsPassed": 53,
+  "backend": {
+    "tests": 83,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "jarBuilt": true,
+    "backgroundBackendStoppedForBuild": true,
+    "requiresUserStart": true
+  },
+  "aiTestsPassed": 169,
+  "aiBackgroundServiceStarted": false,
+  "realUserFeedbackTrainingPerformed": false,
+  "reviewedLabelMinimumForTrainingRound": 20,
+  "modelsPreserved": {
+    "best_new.pt": true,
+    "best_resnet50_yolo.pth": true,
+    "parts-yolo11n.pt": true,
+    "material-resnet18.pth": true
+  },
+  "autoActivation": false,
+  "predictionUncertaintyPolicy": {
+    "materialBelow": 0.8,
+    "detectionBelow": 0.6,
+    "unknownPriority": 1
+  },
+  "apiPrefix": "/api/v1",
+  "adminPage": "Admin/learning.html",
+  "documentation": "docs/bottle-components/HITL.md",
+  "browserVisualQa": "Not performed; automated FE checks use jsdom.",
+  "limitations": [
+    "No genuine new HITL labels trained yet.",
+    "No detector training from incomplete component feedback.",
+    "pHash cannot establish physical-product independence.",
+    "No accuracy improvement claim before evaluating a real labelled round."
+  ],
+  "adminIndependentVerification": {
+    "implemented": true,
+    "bases": [
+      "VISUAL_REVIEW",
+      "PHYSICAL_CHECK",
+      "PACKAGING_MARK"
+    ],
+    "requiresExplicitConfirmation": true,
+    "requiresNote": true,
+    "userBasisPreserved": true,
+    "consentAndRegionStillRequired": true,
+    "visualExportBasis": "ADMIN_VISUAL_REVIEW",
+    "realPendingCaseAutomaticallyApproved": false
+  }
+}

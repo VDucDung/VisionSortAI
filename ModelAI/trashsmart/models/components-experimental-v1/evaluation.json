@@ -1,0 +1,91 @@
+{
+  "split": "test",
+  "classes": [
+    "glass",
+    "metal",
+    "paper",
+    "plastic"
+  ],
+  "material": {
+    "accuracy": 0.7105262875556946,
+    "macroF1": 0.6737012987012987,
+    "f1ByClass": {
+      "glass": 0.7,
+      "metal": 0.8,
+      "paper": 0.9090909090909091,
+      "plastic": 0.2857142857142857
+    },
+    "confusionMatrix": [
+      [
+        7,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        8,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        1
+      ],
+      [
+        2,
+        3,
+        0,
+        2
+      ]
+    ],
+    "count": 38,
+    "confidenceCoverageAt070": 0.7894737124443054
+  },
+  "validation": {
+    "accuracy": 0.824999988079071,
+    "macroF1": 0.8198717948717948,
+    "f1ByClass": {
+      "glass": 0.8333333333333334,
+      "metal": 0.8,
+      "paper": 0.8461538461538461,
+      "plastic": 0.8
+    },
+    "confusionMatrix": [
+      [
+        10,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        6,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        11,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        6
+      ]
+    ],
+    "count": 40,
+    "confidenceCoverageAt070": 0.824999988079071
+  },
+  "bestEpoch": 18,
+  "endToEndReviewed": false,
+  "benchmarkScope": "TACO source-image-held-out auxiliary material crops; not physical bottle-product accuracy",
+  "experimental": true,
+  "materialSha256": "11161155a8047b9855b7463de91dc0fca922adb2999c8d50b7eb39af45e38a9b",
+  "detectorSha256": "aaa97fdf34f91104471a424a8c7fd40c1f31e99f628c9f46a6333fcd53cebd0c"
+}

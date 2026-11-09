@@ -1,0 +1,11 @@
+{
+  "trainingScope": "bottle-components",
+  "version": "replace-after-training",
+  "validated": false,
+  "evaluationReport": "evaluation.json",
+  "detector": {"file": "parts-best.pt", "sha256": "REPLACE_WITH_SHA256"},
+  "materialClassifier": {"file": "materials-best.pth", "sha256": "REPLACE_WITH_SHA256"},
+  "detectionThreshold": 0.25,
+  "materialThreshold": 0.7,
+  "detectorImageSize": 512
+}

@@ -1,0 +1,13 @@
+package com.example.hauiTrash.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class LoginRequest {
+    @NotBlank
+    private String identifier; // USER: phone | ADMIN/EDITOR: email
+    @NotBlank
+    @lombok.ToString.Exclude
+    private String password;
+}

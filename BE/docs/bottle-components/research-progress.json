@@ -1,0 +1,173 @@
+{
+  "recordedAt": "2026-11-04T15:08:54.718822+00:00",
+  "phase": "MATERIAL_VERIFICATION_REQUIRED",
+  "researchJobPhase": "READY_FOR_REVIEW",
+  "completedEpochs": 40,
+  "evaluation": {
+    "scope": "part-geometry-only",
+    "split": "test",
+    "completedEpochs": 40,
+    "metrics": {
+      "metrics/precision(B)": 0.7402111415640121,
+      "metrics/recall(B)": 0.6539458215856827,
+      "metrics/mAP50(B)": 0.6888238594364497,
+      "metrics/mAP50-95(B)": 0.501616251146272,
+      "fitness": 0.501616251146272
+    },
+    "detectorSha256": "aaa97fdf34f91104471a424a8c7fd40c1f31e99f628c9f46a6333fcd53cebd0c",
+    "endToEndReviewed": false,
+    "materialClassifierReady": false,
+    "activated": false
+  },
+  "proposalPreparation": {
+    "candidateImages": 1271,
+    "componentBoxes": 4825,
+    "parts": {
+      "body": 2278,
+      "cap": 1287,
+      "label": 1260
+    },
+    "scopeExcludedImages": [
+      "01_user_photos/metal/test__00000167_jpg.rf.1691b3201a7284e2398bc7b8eb06f687.jpg",
+      "01_user_photos/metal/train__00000969_jpg.rf.89f23ab055bae394eb14d87584526447.jpg",
+      "01_user_photos/metal/train__16_13_jpg.rf.bf33ecfedbea6041bd33e300adbeab38.jpg",
+      "01_user_photos/metal/train__19_51_jpg.rf.e6f565b8c2d7697ec73269612b599995.jpg",
+      "01_user_photos/metal/valid__00002168_jpg.rf.a4597ddb490d1f2be5cc6106e2b399c1.jpg",
+      "01_user_photos/metal/valid__Metal_712_jpg.rf.e65a0216e4255dad1ecd42dd98c1db3f.jpg",
+      "01_user_photos/needs_review/mixed_materials/train__IMG_20240316_223034_jpg.rf.cbb532d5701cf5fc4cf35cff924ae852.jpg",
+      "01_user_photos/needs_review/mixed_materials/train__IMG_20240316_224509_jpg.rf.ff4bf7b2b6f88f5537ba53f2978da543.jpg",
+      "01_user_photos/paper/train__paper999_jpg.rf.0944d5641921ccc705d7efcafaa8820a.jpg"
+    ],
+    "recoveredImages": 3,
+    "recovery": {
+      "source": "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\component-review-v2\\scope-filtered-missing-bottles.jsonl",
+      "output": "D:\\thacsi\\DOAN\\HAUI-TRASH\\AI_DATASET\\bottle_components\\02_annotations\\component-review-v2\\recovered-parts.jsonl",
+      "candidateImages": 3,
+      "componentBoxes": 16,
+      "readErrors": [],
+      "scopeExcludedImages": [],
+      "annotationReviewed": false,
+      "materialVerifiedCount": 0,
+      "masterAnnotationsModified": false
+    },
+    "source": "user-component-proposals-research-detector-v2-scope-v1.jsonl",
+    "sourceSha256": "5cab1a59032e18e18fb7043cdad486cea70969d8f25f66d552c1354cd947a161",
+    "detectorSha256": "aaa97fdf34f91104471a424a8c7fd40c1f31e99f628c9f46a6333fcd53cebd0c",
+    "visualSampleImages": 14,
+    "annotationReviewed": false,
+    "materialVerifiedCount": 0,
+    "rawPhotosModified": false,
+    "masterAnnotationsModified": false,
+    "readErrors": []
+  },
+  "acceptedGeometry": {
+    "reviewedImages": 3,
+    "bottleCrops": 4,
+    "counts": {
+      "detector/train/cap": 4,
+      "detector/train/body": 4,
+      "detector/train/label": 3
+    },
+    "split": "train only; more independently reviewed validation/test groups required",
+    "masterBeforeSha256": "e5f409e784043ee9a1d260c05eb8134b026a6841272cffeea01367e36da80319",
+    "masterAfterSha256": "a61ed5339107fda56db8307b014d770e539fcd43633564612ff5bfec1bf62ff4",
+    "verifiedComponentMaterialExamples": 0,
+    "runtimeActivated": false,
+    "newTrainingStarted": false,
+    "nearDuplicatePairReviewPending": true
+  },
+  "visualQA": {
+    "reviewer": "assistant_visual_geometry_review",
+    "reviewedAt": "2026-11-04T15:08:54.717895+00:00",
+    "evidence": [
+      "parts-sheet-01.png",
+      "parts-sheet-02.png",
+      "parts-sheet-03.png",
+      "parts-sheet-04.png"
+    ],
+    "sampleCount": 14,
+    "sampleSelection": "Non-random subset of already visually scoped bottles; not a statistical test set.",
+    "observations": [
+      {
+        "queueId": 11,
+        "note": "Parent box includes background bins; rotated bottle has missing cap/label proposals. Needs parent and parts redraw.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 34,
+        "note": "Two bottles; cap extent versus neck sleeve needs a consistent annotation policy; no material conclusion.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 72,
+        "note": "Multiple visible bottles missed by parent detector; partial parents and label confusion.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 255,
+        "note": "Open bottle mouth proposed as cap; visible side label missed.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 439,
+        "note": "Mixed cans/bottles; known false parents filtered. Cap/neck-label proposals still incomplete.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 457,
+        "note": "Parent detector misses crushed bottle; other parent needs full geometry review.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 480,
+        "note": "Missed lying/crushed bottles; tiny body proposals insufficient.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 489,
+        "note": "Large yellow closure missed; one cap overlaps body proposal; no geometry approval.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 704,
+        "note": "Dense occlusion and missed bottles; false label on transparent body; review all parents.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 712,
+        "note": "Duplicate label proposal; manually corrected two parent/part sets using original image.",
+        "geometryAccepted": true
+      },
+      {
+        "queueId": 777,
+        "note": "Two overlapping proposals for same label; bottle cropped at top; needs redraw.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 1158,
+        "note": "Original photo checked; manually corrected one cap and body; no visible applied label.",
+        "geometryAccepted": true
+      },
+      {
+        "queueId": 1160,
+        "note": "Missed visible labels, one body not predicted, one body includes cap; needs redraw.",
+        "geometryAccepted": false
+      },
+      {
+        "queueId": 1199,
+        "note": "Sideways bottle missing cap/label; manually corrected all three visible parts.",
+        "geometryAccepted": true
+      }
+    ],
+    "materialLabelsVerified": 0,
+    "releaseRecommended": false
+  },
+  "runtimeActivated": false,
+  "csvSha256": "288178e385f2686af6f78bd1bfec50b116e0adcb18d23ee7539615afc59e9f4b",
+  "remaining": [
+    "Review remaining bottle/part proposals and near-duplicate product groups",
+    "Collect verified per-part materials on physical bottles",
+    "Reserve independent product groups for validation and test",
+    "Train material classifier and re-evaluate full FE/BE/AI path before runtime release"
+  ]
+}

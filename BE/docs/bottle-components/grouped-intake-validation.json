@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-03T22:19:10",
+  "layout": "grouped folders and CSV image_path",
+  "csvSha256": "288178e385f2686af6f78bd1bfec50b116e0adcb18d23ee7539615afc59e9f4b",
+  "photoCount": 5935,
+  "csvRows": 5935,
+  "matchedPhotoCount": 5935,
+  "photosByFolder": {
+    "glass": 1661,
+    "metal": 1122,
+    "needs_review": 216,
+    "paper": 1525,
+    "plastic": 1411
+  },
+  "missingFiles": 0,
+  "csvErrors": 0,
+  "exactDuplicateGroups": 129,
+  "crossSplitDuplicateGroups": 45,
+  "verifiedRowsByPart": {
+    "body": 1
+  },
+  "knownOutOfScopePhotos": 1,
+  "tests": {
+    "groupedIntakePython": 11,
+    "componentRegressionPython": 15,
+    "annotatorDomFlows": 4
+  },
+  "sourceCsvModified": false,
+  "rawImagesMovedOrModified": false,
+  "remaining": [
+    "Review bottle proposals and filter non-bottle photos",
+    "Resolve duplicate aliases before independent evaluation",
+    "Add visible component boxes and verify each material before classifier training"
+  ],
+  "proposalScreening": {
+    "processed": 5798,
+    "candidateImages": 1280,
+    "readErrors": 0,
+    "duplicateAliases": 136,
+    "seconds": 273.61,
+    "reviewed": false,
+    "materialLabelsCreated": 0,
+    "masterAnnotationsModified": false
+  }
+}

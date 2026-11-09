@@ -1,0 +1,46 @@
+{
+  "modelVersion": "components-experimental-v1",
+  "trainedClassifierEpochs": 75,
+  "selectedEpoch": 18,
+  "materialTestSamples": 38,
+  "materialTestAccuracy": 0.7105262875556946,
+  "materialTestMacroF1": 0.6737012987012987,
+  "metricScope": "TACO source-image-held-out auxiliary material crops; not physical bottle-product accuracy",
+  "legacyModelChecksumsVerified": {
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\Model_AI\\ModelFeatNew\\Model_AI_Yolo\\trashsmart\\models\\best_new.pt": true,
+    "D:\\thacsi\\DOAN\\HAUI-TRASH\\Model_AI\\ModelFeatNew\\Model_AI_Yolo\\trashsmart\\models\\best_resnet50_yolo.pth": true
+  },
+  "frontendFlowsPassed": 44,
+  "frontendInstalled": true,
+  "detailedServiceStarted": true,
+  "backendMavenChecksRun": true,
+  "pending": [],
+  "approvalReviewFailure": null,
+  "researchOnly": true,
+  "productionModelReplaced": false,
+  "backendTests": {
+    "tests": 70,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "aiTestsPassed": 158,
+  "detailedServiceUrl": "http://127.0.0.1:8000/details",
+  "standalone8011Required": false,
+  "realHttpSmoke": {
+    "passed": true,
+    "sourceScan": 49,
+    "database": "disposable H2",
+    "componentCount": 1,
+    "found": [
+      {
+        "partType": "body",
+        "material": "glass"
+      }
+    ],
+    "legacyResultUnchanged": true,
+    "cloudUpload": false
+  },
+  "browserVerification": "Not completed; browser automation stopped because current browser URL could not be established confidently.",
+  "resolvedFailure": "The independent 8011 process was not running. Detailed routes now mount under /details in the standard AI process on 8000; BE uses that by default."
+}

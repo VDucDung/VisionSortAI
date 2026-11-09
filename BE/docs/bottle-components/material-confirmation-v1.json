@@ -1,0 +1,200 @@
+{
+  "importedAt": "2026-11-05T15:52:20.846918+00:00",
+  "sourceSha256": "3eb00e239f9a5533e58a919d7b4f3e2ea209d2e044c15417d272196e2cbb7749",
+  "groupsRead": 30,
+  "acceptedUserDeclaredParts": {
+    "body/glass": 25,
+    "label/paper": 25,
+    "body/plastic": 5,
+    "cap/plastic": 5,
+    "label/plastic": 5
+  },
+  "acceptedUserDeclaredPartCount": 65,
+  "pendingClarification": [
+    {
+      "groupId": "bottle_real_001",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_002",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_003",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_004",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_005",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_006",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_007",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_008",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_009",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_010",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_011",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_012",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_013",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_014",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_015",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_016",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_017",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_018",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_019",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_020",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_021",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_022",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_023",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_024",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    },
+    {
+      "groupId": "bottle_real_025",
+      "partType": "cap",
+      "declaredMaterial": "metal",
+      "declaredVerified": true,
+      "reason": "Clarify removable closure vs neck foil/security packaging; async question pending"
+    }
+  ],
+  "independentMaterialVerificationPerformed": false,
+  "original5935RowsPreservedAsBytes": true,
+  "metadataErrors": [],
+  "matchedPhotos": 6051,
+  "materialsBeforeSha256": "aa6a456c2e222ffb2ee97a6179f7f00a0194b06a2beee32d28ca08f725186afb",
+  "materialsAfterSha256": "487138a0126e84ff0dc4ccf0a3bc4a80f80fec0deaae5648ed4e43b5cca4b40c",
+  "componentProposalMaterialsAutoVerified": 0,
+  "masterGeometryAutoApproved": 0,
+  "classifierTrainingStarted": false,
+  "runtimeActivated": false
+}

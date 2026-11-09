@@ -1,0 +1,22 @@
+{
+  "metadataValid": true,
+  "userSourceUnmodified": true,
+  "original5935RowsPreserved": true,
+  "acceptedUserDeclaredPartGroups": {
+    "body/glass": 25,
+    "label/paper": 25,
+    "body/plastic": 5,
+    "cap/plastic": 5,
+    "label/plastic": 5
+  },
+  "acceptedPartGroupCount": 65,
+  "pendingMetalCapGroups": 25,
+  "oldMasterRecordsPreserved": 478,
+  "newReviewedImageRecords": 3,
+  "newVerifiedPlasticCrops": 8,
+  "modelProposalsNotAutomaticallyVerified": true,
+  "liveHTTPUsesUpdatedNotesAndReviewedGeometry": true,
+  "checkpointUnchanged": true,
+  "classifierTrainingStarted": false,
+  "runtimeActivated": false
+}

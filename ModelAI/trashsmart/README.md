@@ -1,5 +1,12 @@
 # TrashSmart — một luồng YOLO best_new.pt
 
+## Thí nghiệm đối chứng YOLO11n và YOLOv8n
+
+Xem [hướng dẫn huấn luyện, đánh giá và thử cùng ảnh trên hai mô hình](yolo_training/BENCHMARK.md).
+Thí nghiệm lưu riêng trong `outputs/yolo11-vs-yolov8`, không thay checkpoint API.
+`benchmark` hỗ trợ train riêng từng kiến trúc và đánh giá chung trên một bản dữ liệu đã khóa.
+`predict_compare` cho chạy riêng YOLO11, YOLOv8 hoặc tạo ảnh kết quả đặt cạnh nhau.
+
 ## Model chính thức
 
 YOLO chỉ dùng `trashsmart/models/best_new.pt`. Đường dẫn tuyệt đối định nghĩa

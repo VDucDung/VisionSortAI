@@ -1,5 +1,8 @@
 # So sánh YOLO11n và YOLOv8n
 
+Đây là đợt đối chiếu hai kiến trúc trước đây. Thực nghiệm kiểm chứng phần cải tiến
+trên cùng YOLO11n được mô tả trong [Original và Improved](ORIGINAL_IMPROVED.md).
+
 Chạy các lệnh dưới từ thư mục `VisionSortAI/ModelAI`. Thí nghiệm đánh giá phát
 hiện một lớp `item` trên cùng dữ liệu của dự án.
 

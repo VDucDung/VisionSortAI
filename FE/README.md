@@ -5,7 +5,7 @@ Giao diện HTML/CSS/JavaScript thuần, không cần cài thư viện. Yêu c�
 ## Chạy local
 
 ```powershell
-cd D:\thacsi\DOAN\HAUI-TRASH\FE
+cd .\FE
 node serve.mjs
 ```
 
@@ -30,6 +30,14 @@ FE chỉ gọi `/api/v1` của BE. Token User/Admin được tách riêng trong 
 
 ```powershell
 node --check assets/app.js
+```
+
+Kiểm thử luồng giao diện (từ thư mục `FE`, sau khi cài devDependencies):
+
+```powershell
+npm.cmd ci
+npm.cmd test
+npm.cmd run test:annotator
 ```
 
 Hướng dẫn API, cấu hình AI, tạo admin và kiểm thử liên tầng: `../BE/INTEGRATION.md`.

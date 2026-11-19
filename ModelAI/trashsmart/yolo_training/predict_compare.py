@@ -37,6 +37,7 @@ def main():
     parser.add_argument("--model", choices=("yolo11", "yolov8", "existing", "both"), default="both")
     parser.add_argument("--experiment", type=Path, default=Path("outputs/yolo11-vs-yolov8"))
     parser.add_argument("--weights", type=Path, help="Override weights for a single-model run")
+    parser.add_argument("--display-name", help="Label for one model, e.g. YOLO11n Original or Improved")
     parser.add_argument("--output", type=Path, required=True, help="Output directory, automatically numbered on repeated runs")
     parser.add_argument("--imgsz", type=int, help="Defaults to the frozen experiment size")
     parser.add_argument("--conf", type=float, default=.25)
@@ -54,6 +55,8 @@ def main():
         parser.error("Invalid image size, thresholds, threads or repeat count")
     if args.weights and args.model == "both":
         parser.error("--weights requires one model")
+    if args.display_name and args.model == "both":
+        parser.error("--display-name requires one model")
     choices = {"yolo11": args.experiment/"yolo11n/weights/best.pt",
                "yolov8": args.experiment/"yolov8n/weights/best.pt",
                "existing": args.experiment/"initial/existing_yolo11.pt"}
@@ -115,6 +118,8 @@ def main():
                    detection_count=len(detections), detections=detections,
                    median_predict_ms=statistics.median(durations),
                    min_predict_ms=min(durations), max_predict_ms=max(durations))
+        if args.display_name:
+            row["display_name"] = args.display_name
         report["models"].append(row)
         annotated = Image.fromarray(cv2.cvtColor(result.plot(), cv2.COLOR_BGR2RGB))
         annotated.save(args.output / (name + ".jpg"))
@@ -126,8 +131,11 @@ def main():
         panel.paste(panel_image, ((panel.width-panel_image.width)//2, 80))
         font = ImageFont.load_default(size=24)
         display_name = {"yolo11": "YOLO11", "yolov8": "YOLOv8", "existing": "Existing YOLO11"}[name]
+        display_name = args.display_name or display_name
         ImageDraw.Draw(panel).text((12, 8), f"{display_name} | boxes={len(detections)}\nMedian predict: {row['median_predict_ms']:.1f} ms", font=font, fill="black", spacing=7)
         panels.append(panel)
+        if args.display_name:
+            panel.save(args.output / (name + "_panel.jpg"))
         print(json.dumps(row, ensure_ascii=False, indent=2))
     if len(panels) == 2:
         combined = Image.new("RGB", (sum(p.width for p in panels), max(p.height for p in panels)), "white")

@@ -137,9 +137,10 @@ tự cập nhật container trên server.
 
 `api.py`, `apiv2.py`, `app.py` là alias cho cùng FastAPI. `train_rac.py` gọi
 cùng script fine-tune. Demo giao thông Streamlit và API cũ được giữ dưới dạng
-`.py.txt` trong `archive/`, không còn là entry point chạy. `models/best.pt`,
-`yolo11n.pt` và cấu hình trong `runs/` là file cũ, không dùng làm model đầu vào
-cho các entry point hiện tại.
+`.py.txt` trong `archive/`, không còn là entry point chạy. `models/best.pt`
+và các hồ sơ trong `runs/` được giữ để đối chiếu thực nghiệm, không phải
+checkpoint mặc định của API. `yolo11n.pt` và `yolov8n.pt` là trọng số khởi tạo
+cho các công cụ huấn luyện, cần giữ lại khi chạy thực nghiệm.
 
 ## Training ResNet và kiểm thử
 

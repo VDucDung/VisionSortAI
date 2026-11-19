@@ -27,7 +27,7 @@ Giữ một số mẫu sản phẩm riêng cho test; sau khi nhận ảnh mình 
 
 ## Công cụ rà soát cục bộ
 
-Trong PowerShell tại `Model_AI/ModelFeatNew/Model_AI_Yolo`:
+Trong PowerShell tại thư mục `ModelAI` của project:
 
 ```powershell
 python -X utf8 -m trashsmart.components annotate --data 'D:\thacsi\DOAN\HAUI-TRASH\AI_DATASET\bottle_components' --port 8766

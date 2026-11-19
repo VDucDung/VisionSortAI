@@ -108,7 +108,7 @@ torch_extensions/
 ####################################
 .coverage
 htmlcov/
-pytest_cache/
+.pytest_cache/
 
 ####################################
 # 🔹 Secrets / credentials

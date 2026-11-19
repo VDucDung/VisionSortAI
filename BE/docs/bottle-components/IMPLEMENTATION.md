@@ -34,7 +34,7 @@ cd D:\thacsi\DOAN\HAUI-TRASH\BE\hauiTrash
 .\mvnw.cmd spring-boot:run
 
 # AI: terminal khác, dùng Python đang cài dependencies project
-cd D:\thacsi\DOAN\HAUI-TRASH\Model_AI\ModelFeatNew\Model_AI_Yolo
+cd D:\thacsi\DOAN\HAUI-TRASH\VisionSortAI\ModelAI
 python -m uvicorn api:app --host 127.0.0.1 --port 8000
 
 # FE: terminal khác
@@ -42,7 +42,7 @@ cd D:\thacsi\DOAN\HAUI-TRASH\FE
 node serve.mjs
 ```
 
-Tool gán nhãn chạy riêng: `python -m trashsmart.components annotate --data 'D:\thacsi\DOAN\HAUI-TRASH\AI_DATASET\bottle_components'`, rồi mở `http://127.0.0.1:8766`. Không tải ảnh ra ngoài. Chi tiết export, train CPU/Colab, resume và đánh giá/phát hành ở `Model_AI_Yolo/COMPONENTS.md`.
+Tool gán nhãn chạy riêng: `python -m trashsmart.components annotate --data 'D:\thacsi\DOAN\HAUI-TRASH\AI_DATASET\bottle_components'`, rồi mở `http://127.0.0.1:8766`. Không tải ảnh ra ngoài. Chi tiết export, train CPU/Colab, resume và đánh giá/phát hành ở `ModelAI/COMPONENTS.md`, tính từ thư mục gốc project.
 
 ## Hợp đồng dữ liệu
 

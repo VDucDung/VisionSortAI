@@ -13,4 +13,4 @@ npm test
 
 Các test dùng DOM giả lập, mock BE và kiểm tra header, phiên đăng nhập, WebP, kết quả bộ phận, khung tương tác, lịch sử và thống kê. Không thay thế kiểm tra trực quan responsive trên trình duyệt và đánh giá AI bằng ảnh thật.
 
-Hướng dẫn dữ liệu/huấn luyện: `../Model_AI/ModelFeatNew/Model_AI_Yolo/COMPONENTS.md`.
+Hướng dẫn dữ liệu/huấn luyện: `../ModelAI/COMPONENTS.md`.

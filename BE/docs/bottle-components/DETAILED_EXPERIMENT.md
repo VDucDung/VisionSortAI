@@ -30,7 +30,7 @@ Nguyên nhân lỗi 503 được ghi nhận: BE mặc định gọi cổng 8011 
 Khởi động AI bình thường, không cần thêm terminal cho 8011:
 
 ~~~powershell
-cd D:\thacsi\DOAN\HAUI-TRASH\Model_AI\ModelFeatNew\Model_AI_Yolo
+cd D:\thacsi\DOAN\HAUI-TRASH\VisionSortAI\ModelAI
 python -m uvicorn trashsmart.pipeline.main:app --host 127.0.0.1 --port 8000
 ~~~
 

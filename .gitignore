@@ -1,0 +1,16 @@
+# Local cleanup recovery copies and generated caches.
+/.cleanup-archive/
+**/__pycache__/
+**/.pytest_cache/
+**/.ipynb_checkpoints/
+*.py[cod]
+.DS_Store
+Thumbs.db
+
+# Local editor state and machine-specific configuration.
+**/.idea/
+**/.vscode/
+*.iml
+**/.env
+**/.env.local
+**/application-local.properties

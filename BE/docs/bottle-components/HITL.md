@@ -28,7 +28,7 @@ Tham khảo cách hỏi nhãn dựa trên độ không chắc chắn và lưu ý
 Giữ file xuất nguyên từ admin, không tự sửa các cờ `adminReviewed`/`trainingConsent`. Ví dụ lưu ở `BE\hitl-approved-materials.json`. Chạy lệnh trong terminal AI:
 
 ~~~powershell
-cd D:\thacsi\DOAN\HAUI-TRASH\Model_AI\ModelFeatNew\Model_AI_Yolo
+cd D:\thacsi\DOAN\HAUI-TRASH\VisionSortAI\ModelAI
 python -m trashsmart.components.hitl prepare --feedback D:\thacsi\DOAN\HAUI-TRASH\BE\hitl-approved-materials.json --base-data D:\thacsi\DOAN\HAUI-TRASH\AI_DATASET\bottle_components\05_models\components-experimental-v1\dataset --source-cache D:\thacsi\DOAN\HAUI-TRASH\AI_DATASET\bottle_components\03_public\taco-material-review\images --output D:\thacsi\DOAN\HAUI-TRASH\AI_DATASET\bottle_components\04_prepared\hitl-round-001
 ~~~
 

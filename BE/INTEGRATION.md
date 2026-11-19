@@ -20,7 +20,7 @@ Mở ba terminal riêng. Bật MySQL, tạo database `HauiTrash` nếu chưa có
 AI:
 
 ```powershell
-cd D:\thacsi\DOAN\HAUI-TRASH\Model_AI\ModelFeatNew\Model_AI_Yolo
+cd D:\thacsi\DOAN\HAUI-TRASH\VisionSortAI\ModelAI
 python -m uvicorn api:app --host 127.0.0.1 --port 8000
 ```
 
@@ -29,14 +29,14 @@ Máy này có Python tại `$env:LOCALAPPDATA\Python\pythoncore-3.14-64\python.e
 BE:
 
 ```powershell
-cd D:\thacsi\DOAN\HAUI-TRASH\BE\hauiTrash
+cd D:\thacsi\DOAN\HAUI-TRASH\VisionSortAI\BE\hauiTrash
 .\mvnw.cmd clean spring-boot:run
 ```
 
 FE:
 
 ```powershell
-cd D:\thacsi\DOAN\HAUI-TRASH\FE
+cd D:\thacsi\DOAN\HAUI-TRASH\VisionSortAI\FE
 node serve.mjs
 ```
 
@@ -53,7 +53,7 @@ Khi cần tạo admin, dùng script tại thư mục `BE` để nhập mật kh�
 
 ```powershell
 # Dừng BE đang chạy trước bằng Ctrl+C.
-cd D:\thacsi\DOAN\HAUI-TRASH\BE
+cd D:\thacsi\DOAN\HAUI-TRASH\VisionSortAI\BE
 powershell -NoProfile -ExecutionPolicy Bypass -File .\create-admin.ps1 -Mode New
 ```
 
@@ -100,13 +100,13 @@ Ngày 01/11/2026: sửa fixture `UploadErrorHttpTest` dùng `System.nanoTime() %
 BE có kiểm thử tích hợp H2 cho đăng ký/đăng nhập, vai trò, CORS, cách ly dữ liệu, lọc lịch sử, trạng thái xử lý, retry, thống kê, khóa phiên và upload ảnh không hợp lệ; kiểm thử khởi động dùng H2 thay vì MySQL thật.
 
 ```powershell
-cd D:\thacsi\DOAN\HAUI-TRASH\BE\hauiTrash
+cd D:\thacsi\DOAN\HAUI-TRASH\VisionSortAI\BE\hauiTrash
 .\mvnw.cmd clean test
 ```
 
 AI có kiểm thử API, metadata, admission, giới hạn ảnh, checkpoint và workflow huấn luyện. Lần kiểm tra tích hợp cũng nạp model thật và suy luận ảnh mẫu local; upload được giả lập trong bước kiểm tra này. Không huấn luyện lại hay đánh giá lại độ chính xác trên tập test độc lập.
 
-FE có 26 kiểm thử luồng DOM trong `BE/.integration/frontend-flow-tests.mjs` (thư mục kiểm thử local, không cần để vận hành FE), kiểm tra upload, kết quả, retry, lọc, quản trị và xử lý lỗi. Kiểm thử DOM không thay thế việc kiểm tra bố cục bằng mắt trên các kích thước thiết bị thực.
+Kiểm thử FE hiện nằm trong `FE/tests/frontend-flow-tests.mjs` và `FE/tests/annotator-flow-tests.mjs`. Chạy `npm.cmd test` và `npm.cmd run test:annotator` từ thư mục `FE` sau khi cài devDependencies. Các bản kiểm thử cũ trong `.integration` chỉ là hồ sơ local. Kiểm thử DOM không thay thế việc kiểm tra bố cục bằng mắt trên các kích thước thiết bị thực.
 
 Sửa lỗi chọn ảnh/đăng nhập: grid trang chủ dùng `minmax(0,1fr)` và các cột được phép co; tên file dài được rút gọn, có tooltip đầy đủ. Khi cần đăng nhập, hộp thoại mở ngay trên trang và giữ ảnh trong bộ nhớ; đăng nhập thành công tiếp tục gửi ảnh. FE không tự xóa phiên/chuyển sang login khi nhận một lỗi upload. Nếu BE trả 401 cho upload, FE kiểm tra riêng `/auth/me` trước khi yêu cầu đăng nhập lại. BE cho phép dispatcher `ERROR` đi qua để giữ đúng 500/404 thay vì biến thành 401. Đã tái hiện hai lỗi 500→401 và 404→401 bằng HTTP với server nhúng, sau sửa cả ba kiểm thử HTTP lỗi và sáu kiểm thử tích hợp phân quyền/luồng quét đều qua. Không có upload thật ra Cloudinary trong các kiểm thử này.
 

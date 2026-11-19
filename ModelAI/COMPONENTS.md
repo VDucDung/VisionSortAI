@@ -7,7 +7,7 @@
 Đọc `D:\thacsi\DOAN\HAUI-TRASH\AI_DATASET\bottle_components\README.md`.
 Ảnh đặt trong `01_user_photos/images`; cách điền vật liệu xem `examples/materials.example.csv`.
 
-Trong thư mục Model_AI_Yolo, với Python đang cài dependencies của project:
+Trong thư mục `ModelAI`, với Python đang cài dependencies của project:
 
 ```powershell
 $dataset='D:\thacsi\DOAN\HAUI-TRASH\AI_DATASET\bottle_components'

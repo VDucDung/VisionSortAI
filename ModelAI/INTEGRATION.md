@@ -1,9 +1,9 @@
 # TrashSmart — Tích hợp FE / BE / AI
 
-API chính thức: `api:app` (cũng được export tại `apiv2:app`). Cả hai dùng `trashsmart.pipeline.main:app`; không dùng ứng dụng desktop `app.py` làm HTTP server.
+API chính thức: `trashsmart.pipeline.main:app`. Các entry point `api:app`, `apiv2:app` và `app:app` cùng export một FastAPI để giữ tương thích với các lệnh chạy cũ.
 
 ```powershell
-cd D:\thacsi\DOAN\HAUI-TRASH\Model_AI\ModelFeatNew\Model_AI_Yolo
+cd .\ModelAI
 python -m uvicorn api:app --host 127.0.0.1 --port 8000
 ```
 

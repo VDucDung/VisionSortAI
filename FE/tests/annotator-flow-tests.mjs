@@ -1,7 +1,7 @@
 ﻿import {JSDOM,VirtualConsole} from 'jsdom';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
-const html=fs.readFileSync(new URL('../../Model_AI/ModelFeatNew/Model_AI_Yolo/trashsmart/components/annotator.html',import.meta.url),'utf8');
+const html=fs.readFileSync(new URL('../../ModelAI/trashsmart/components/annotator.html',import.meta.url),'utf8');
 const code=html.match(/<script>([\s\S]*?)<\/script>/)[1];
 const first='01_user_photos/glass/valid__one.jpg',second='01_user_photos/metal/test__two.jpg';
 async function waitFor(test){for(let i=0;i<60;i++){if(test())return;await new Promise(r=>setTimeout(r,5));}throw Error('DOM state timed out');}

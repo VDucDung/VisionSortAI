@@ -22,6 +22,8 @@ Admin chỉ đăng nhập bằng email của tài khoản ADMIN được cấp t
 
 Toàn bộ trang dùng `assets/app.js`, `assets/styles.css`, `assets/logo.svg`. Không còn số liệu mẫu hoặc logic quản lý quiz/model/bài viết trong giao diện đang dùng. Các đường dẫn trang cũ được chuyển về luồng mới.
 
+`assets/app.js` chỉ khởi động ứng dụng; mã nguồn được chia theo chức năng trong `assets/src/`. `application.js` ghép các mô-đun `core`, `ui`, `features` và giữ trạng thái riêng cho từng trang. Xem [cấu trúc và quy tắc phát triển](../docs/PROJECT_STRUCTURE.md).
+
 ## Kết nối
 
 FE chỉ gọi `/api/v1` của BE. Token User/Admin được tách riêng trong `sessionStorage`; BE kiểm tra quyền trên mọi yêu cầu. Lịch sử/kết quả được tải từ server bằng ID, không lấy từ cache local của giao diện cũ.

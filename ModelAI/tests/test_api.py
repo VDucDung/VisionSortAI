@@ -12,6 +12,8 @@ try:
     import torch
     from fastapi.testclient import TestClient
     from trashsmart.pipeline import main as api
+    from trashsmart.pipeline import config, inference, runtime
+    from trashsmart.pipeline.application import create_app
 except ModuleNotFoundError as error:
     raise unittest.SkipTest(str(error))
 
@@ -23,6 +25,23 @@ def image_bytes():
 class ApiTests(unittest.TestCase):
     def setUp(self):
         self.client = TestClient(api.app)
+
+    def test_application_factory_keeps_prediction_services_independent(self):
+        services = []
+        for name in ("first", "second"):
+            models = Mock(return_value=(Mock(), Mock()))
+            process = Mock(return_value={"source": name, "count": 0, "detections": []})
+            app = create_app(get_models=models, process_image=process,
+                             download_image_to_cv2=Mock())
+            client = TestClient(app)
+            self.assertEqual(client.get("/metadata").status_code, 200)
+            models.assert_not_called()
+            services.append((client, models, process, name))
+        for client, models, process, name in services:
+            response = client.post("/predict-image", files={"file": ("image.jpg", image_bytes())})
+            self.assertEqual(response.json()["source"], name)
+            models.assert_called_once()
+            process.assert_called_once()
 
     def test_readiness_failure_and_liveness(self):
         with patch.object(api, "get_models", side_effect=RuntimeError("bad checkpoint")):
@@ -73,9 +92,9 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(response.status_code, 422)
 
     def test_concurrent_initialization_loads_once(self):
-        with patch.object(api, "_yolo_model", None), patch.object(api, "_resnet_model", None), \
-                patch.object(api, "load_yolo_model", return_value=Mock()) as yolo, \
-                patch.object(api, "load_resnet_model", return_value=Mock()) as resnet:
+        with patch.object(api, "_runtime", runtime.ModelRuntime()), \
+                patch.object(runtime, "load_yolo_model", return_value=Mock()) as yolo, \
+                patch.object(runtime, "load_resnet_model", return_value=Mock()) as resnet:
             with ThreadPoolExecutor(max_workers=4) as pool:
                 list(pool.map(lambda _: api.get_models(), range(8)))
         yolo.assert_called_once()
@@ -85,10 +104,10 @@ class ApiTests(unittest.TestCase):
         box = SimpleNamespace(conf=torch.tensor(0.9), cls=torch.tensor(0),
                               xyxy=torch.tensor([[0, 0, 40, 40]]))
         yolo = Mock(return_value=[SimpleNamespace(boxes=[box], names={0: "Bottle"})])
-        with patch.object(api, "RESNET_CONF_THRESHOLD", 0.7), \
-                patch.object(api, "get_class_labels_batch", return_value=[("unknown", 0.6)]), \
-                patch.object(api, "upload_image_bytes_to_cloudinary", return_value="https://example.com/a.jpg"), \
-                patch.object(api, "upload_crop_to_cloudinary", return_value="https://example.com/c.jpg"):
+        with patch.object(config, "RESNET_CONF_THRESHOLD", 0.7), \
+                patch.object(inference, "get_class_labels_batch", return_value=[("unknown", 0.6)]), \
+                patch.object(inference, "upload_image_bytes_to_cloudinary", return_value="https://example.com/a.jpg"), \
+                patch.object(inference, "upload_crop_to_cloudinary", return_value="https://example.com/c.jpg"):
             result = api.process_image(np.zeros((40, 40, 3), np.uint8), yolo,
                                        lambda batch: torch.zeros((1, 4)))
         self.assertTrue(result["requiresConfirmation"])
@@ -96,9 +115,9 @@ class ApiTests(unittest.TestCase):
 
     def test_yolo_accuracy_settings_are_forwarded(self):
         yolo = Mock(return_value=[SimpleNamespace(boxes=[], names={0: "item"})])
-        with patch.object(api, "YOLO_TTA", True), patch.object(api, "YOLO_AGNOSTIC_NMS", True), \
-                patch.object(api, "YOLO_IMG_SIZE", 960), \
-                patch.object(api, "upload_image_bytes_to_cloudinary", return_value="https://example.com/a.jpg"):
+        with patch.object(config, "YOLO_TTA", True), patch.object(config, "YOLO_AGNOSTIC_NMS", True), \
+                patch.object(config, "YOLO_IMG_SIZE", 960), \
+                patch.object(inference, "upload_image_bytes_to_cloudinary", return_value="https://example.com/a.jpg"):
             api.process_image(np.zeros((40, 40, 3), np.uint8), yolo, Mock(), conf=.15, iou=.7)
         self.assertEqual(yolo.call_args.kwargs, dict(imgsz=960, conf=.15, iou=.7,
                                                    augment=True, agnostic_nms=True))

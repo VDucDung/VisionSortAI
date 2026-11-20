@@ -2,7 +2,7 @@ import {JSDOM,VirtualConsole} from 'jsdom';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const frontendRoot=new URL('../',import.meta.url);
-const code=fs.readFileSync(new URL('assets/app.js',frontendRoot),'utf8');
+import {mountApplication} from '../assets/src/application.js';
 const result={id:7,status:'DONE',cloudinaryUrl:'https://example.com/original.png',annotatedUrl:'https://example.com/annotated.png',createdAt:'2026-10-31T06:00:00Z',count:1,confidenceAvg:.93,requiresConfirmation:true,detections:[{id:9,label:'plastic',labelDisplay:'Chai nhựa',confidence:.93,status:'NEEDS_CONFIRM',binName:'Thu gom nhựa',action:'Làm sạch trước khi thu gom.'}]};
 const summary={id:7,accountId:1,fullName:'Người kiểm thử',phone:'0912345678',createdAt:result.createdAt,imageUrl:result.cloudinaryUrl,status:'DONE',count:1,confidenceAvg:.93,materials:['plastic'],requiresConfirmation:true};
 const pageResult=items=>({items,total:items.length,page:0,size:12,totalPages:1});
@@ -24,11 +24,26 @@ async function app(page,area='user',routes={},authenticated=true,query='') {
    if(value instanceof Error)throw value;
    return {ok:!value.__status||value.__status<400,status:value.__status||200,json:async()=>value};
  };
- w.eval(code);await waitFor(()=>w.document.querySelector('main:not(:has(>.loading)),.notice.error') || !authenticated && calls.length);
+ mountApplication(w);await waitFor(()=>w.document.querySelector('main:not(:has(>.loading)),.notice.error') || !authenticated && calls.length);
  return {dom,w,d:w.document,calls,errors,close(){assert.deepEqual(errors,[]);w.close();}};
 }
 const tests=[];
 async function test(name,fn){await fn();tests.push(name);console.log('PASS',name);}
+await test('Hai trang User và Admin giữ riêng trạng thái và trình xử lý khi cùng mở',async()=>{
+ const [user,admin]=await Promise.all([
+  app('history','user',{'/auth/me':{fullName:'User riêng',role:'USER'}}),
+  app('home','admin',{'/auth/me':{fullName:'Admin riêng',role:'ADMIN'}})
+ ]);
+ await waitFor(()=>user.d.querySelector('.scan-card')&&admin.d.querySelector('.stats'));
+ assert.equal(user.d.querySelector('.account-name').textContent,'User riêng');
+ assert.equal(admin.d.querySelector('.account-name').textContent,'Admin riêng');
+ user.d.querySelector('#material').value='plastic';
+ user.d.querySelector('#filters').dispatchEvent(new user.w.Event('submit',{cancelable:true}));
+ await waitFor(()=>user.calls.some(c=>c.path.includes('material=plastic')));
+ assert(!admin.calls.some(c=>c.path.includes('material=plastic')));
+ assert(admin.d.querySelector('.sidebar'));
+ user.close();admin.close();
+});
 await test('Trang chủ dùng thương hiệu chung và kiểm tra ảnh trước khi gửi',async()=>{
  const a=await app('home','user',{},false);assert.match(a.d.querySelector('h1').textContent,/Phân loại đúng/);assert.equal(a.d.querySelector('.brand img').getAttribute('src'),'../assets/logo.svg');a.d.querySelector('#scan').click();assert.match(a.d.querySelector('#upload-error').textContent,/chọn hoặc chụp/);a.close();
 });

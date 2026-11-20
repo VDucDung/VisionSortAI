@@ -2,6 +2,8 @@
 
 API chính thức: `trashsmart.pipeline.main:app`. Các entry point `api:app`, `apiv2:app` và `app:app` cùng export một FastAPI để giữ tương thích với các lệnh chạy cũ.
 
+Mã HTTP, schema, runtime model, suy luận, lưu ảnh và CLI được tách trong `trashsmart/pipeline/`; `main.py` giữ vai trò ghép ứng dụng và tương thích entry point. Xem [cấu trúc mã nguồn](../docs/PROJECT_STRUCTURE.md). Mã huấn luyện và nghiên cứu nằm trong các package riêng, không phụ thuộc router HTTP.
+
 ```powershell
 cd .\ModelAI
 python -m uvicorn api:app --host 127.0.0.1 --port 8000

@@ -13,6 +13,8 @@ Cần MySQL và database `HauiTrash`, cấu hình `hauiTrash/application-local.p
 
 [Hướng dẫn toàn hệ thống, cấp admin, API và kết quả kiểm thử](INTEGRATION.md).
 
+Luồng quét dùng `ScanService` để điều phối nghiệp vụ, `ScanPredictionMapper` để kiểm tra/ánh xạ đầu ra AI và `ScanResponseMapper` để dựng DTO. Xem [cấu trúc mã nguồn](../docs/PROJECT_STRUCTURE.md).
+
 ```powershell
 cd .\hauiTrash
 .\mvnw.cmd clean test

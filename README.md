@@ -2,6 +2,8 @@
 
 Hệ thống TrashSmart gồm giao diện web, backend nghiệp vụ và dịch vụ AI nhận diện rác.
 
+[Cấu trúc mã nguồn và quy tắc phát triển](docs/PROJECT_STRUCTURE.md) mô tả các mô-đun FE, tầng ánh xạ BE, dịch vụ suy luận ModelAI và cách kiểm thử.
+
 - [FE](FE/README.md): giao diện HTML/CSS/JavaScript; chạy bằng `node serve.mjs` từ thư mục `FE`, mặc định cổng 5173.
 - [BE](BE/README.md): Spring Boot / Java 21, cấu hình MySQL và thông tin kết nối trong tệp local của máy.
 - [ModelAI](ModelAI/INTEGRATION.md): FastAPI; entry point chính `trashsmart.pipeline.main:app`. Các tệp `api.py`, `apiv2.py`, `app.py` giữ vai trò tương thích cho những lệnh chạy cũ.

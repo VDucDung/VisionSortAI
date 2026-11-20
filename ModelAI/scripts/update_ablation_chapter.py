@@ -162,7 +162,7 @@ def main():
             ["YOLO11n", "CBAM", "EIoU", "Pretrained", "mAP50–95 (%)", "Tham số (triệu)"],
             [(VARIANTS[r["variant"]], "✓" if r["cbam"] else "–", "✓" if r["eiou"] else "–", "✓",
               percent(r["map50_95"]), number(r["parameters"] / 1e6, 3)) for r in subset],
-            [3.1, 1.2, 1.2, 2.2, 3.35, 3.35])
+            [2.7, 1.8, 1.5, 2.1, 3.1, 3.2])
         models = {r["variant"]: r for r in subset}
         writer.p(
             f"Trên {DATASETS[dataset]}, thêm riêng CBAM làm mAP50–95 thay đổi "
@@ -278,6 +278,14 @@ def main():
         paragraph.paragraph_format.line_spacing = 1.1
         for run in paragraph.runs: run.font.size = Pt(12)
     args.output.mkdir(parents=True, exist_ok=True)
+    # Small ablation/delta tables should not split across consecutive pages.
+    for table in document.tables:
+        labels = [cell.text for cell in table.rows[0].cells]
+        if labels[:3] == ["YOLO11n", "CBAM", "EIoU"] or labels == ["Dữ liệu", "P", "R", "F1", "mAP50", "mAP50–95"]:
+            for index, row in enumerate(table.rows):
+                for cell in row.cells:
+                    for paragraph in cell.paragraphs:
+                        paragraph.paragraph_format.keep_with_next = index < len(table.rows) - 1
     full = args.output / "De_an_Vu_Duc_Dung_YOLO11n_Original_Improved.docx"
     document.save(full)
     chapter = Document(full)

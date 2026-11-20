@@ -6,6 +6,7 @@ import os
 import subprocess
 import sys
 import time
+import uuid
 from pathlib import Path
 
 from trashsmart.yolo_training.benchmark import sha256, write_json
@@ -132,7 +133,7 @@ def main():
             state("refreshing_fields_and_rendering", document=str(document))
             qa = root / "document_qa"; qa.mkdir(exist_ok=True)
             command([str(office.with_name("python.exe")), str(old / "refresh_fields.py"), str(document), "--office", str(office),
-                     "--profile", str(qa / ("fields-" + document.stem))], env)
+                     "--profile", str(qa / ("fields-" + uuid.uuid4().hex[:8]))], env)
             command([python, "-X", "utf8", str(old / "render_docx.py"), str(document), "--output_dir", str(qa / document.stem), "--emit_pdf", "--dpi", "120"], env)
         state("ready_for_visual_review", documents=[str(p) for p in documents.glob("*.docx")])
     except Exception as error:
